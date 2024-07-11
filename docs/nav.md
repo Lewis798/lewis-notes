@@ -10,7 +10,7 @@ import MNav from './nav/MNav.vue'
 
 # 开发者导航
 
-::: info 本站其他导航
+::: info 其他导航
 
 
 :::
