@@ -1,0 +1,127 @@
+/**
+ * Customize default theme styling by overriding CSS variables:
+ * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
+ *
+ * @format
+ */
+
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-gutter: var(--vp-c-divider);
+  --vp-code-block-bg: rgba(125, 125, 125, 0.04);
+  --vp-code-tab-divider: var(--vp-c-divider);
+  --vp-code-copy-code-bg: rgba(125, 125, 125, 0.1);
+  --vp-code-copy-code-hover-bg: rgba(125, 125, 125, 0.2);
+  --vp-c-disabled-bg: rgba(125, 125, 125, 0.2);
+  --vp-code-tab-text-color: var(--vp-c-text-2);
+  --vp-code-tab-active-text-color: var(--vp-c-text-1);
+  --vp-code-tab-hover-text-color: var(--vp-c-text-1);
+  --vp-code-copy-code-active-text: var(--vp-c-text-2);
+  --vp-c-text-dark-3: rgba(56, 56, 56, 0.8);
+  --vp-c-brand-lightest: var(--vp-c-brand-1);
+
+  --vp-c-highlight-bg: var(--vp-c-brand-light);
+  --vp-c-highlight-text: var(--vp-c-bg);
+}
+
+.dark {
+  --vp-code-block-bg: rgba(0, 0, 0, 0.2);
+  --vp-c-text-code: #c0cec0;
+}
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand-1);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-next));
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, var(--vp-c-brand-1) 30%, var(--vp-c-brand-next));
+  --vp-home-hero-image-filter: blur(80px);
+}
+
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(120px);
+  }
+}
+
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(120px);
+  }
+}
+
+/* Safari has a very bad performance on gradient and filter */
+.browser-safari,
+.browser-firefox {
+  --vp-home-hero-image-background-image: transparent;
+  --vp-home-hero-image-filter: "";
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-custom-block-tip-border: var(--vp-c-brand-1);
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+.dark {
+  --vp-custom-block-tip-border: var(--vp-c-brand-1);
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --vp-custom-block-tip-bg: var(--vp-c-brand-dimm);
+}
+
+/**
+ * Component: Algolia
+ * -------------------------------------------------------------------------- */
+.DocSearch {
+  --docsearch-primary-color: var(--vp-c-brand-1) !important;
+}
+.m-home-layout .image-src:hover {
+  transform: translate(-50%, -50%) rotate(20turn);
+  transition: transform 59s 1s linear;
+  transform: translate(-50%, -50%) rotate(333turn);
+  transition: transform 59s 1s cubic-bezier(0.3, 0, 0.8, 1);
+}
+
+.m-home-layout .image-src {
+  background-position: center; // 让背景图像居中
+  background-size: cover; // 让背景图像完全覆盖元素，超出的部分会被裁剪掉
+  border-radius: 50%; // 设置边框半径为50%，使元素为圆形
+  overflow: hidden; // 隐藏超出元素的部分
+}
+.m-home-layout {
+  // background-color: #e8f8fa;
+  background: linear-gradient(to bottom, #e8f8fa, #ffffff);
+}
+.dark .m-home-layout {
+  // background-color: #e8f8fa;
+  background: #1b1b1f;
+}
+.m-home-layout .details small {
+  opacity: 0.8;
+}
+
+.m-home-layout .bottom-small {
+  display: block;
+  margin-top: 2em;
+  text-align: right;
+}
